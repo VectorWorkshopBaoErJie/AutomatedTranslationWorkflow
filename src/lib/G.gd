@@ -29,7 +29,7 @@ func dir_current_parent():
     var pathB=pathA.split("/")
     var new_path=""
     if pathB.size()>2:
-        for i in range(0,pathB.size()-2):
+        for i in range(0,pathB.size()-3):
             new_path+=pathB[i]+"/";
     return new_path
     
