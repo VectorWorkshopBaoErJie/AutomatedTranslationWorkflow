@@ -44,7 +44,7 @@ func __on_merge_button_down():
             for op in TL_S:
                 if op.translation_text=="":
                     op.translation_text=op.source_text
-
+        
             for op in TL_S:
                 it.content=it.content.replace(op.source_text,op.translation_text)
             G.save_file(it.content,new_dir_str+"/"+it.file_name)

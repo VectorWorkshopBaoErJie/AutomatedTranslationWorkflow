@@ -9,14 +9,15 @@ var SF_files=[]
 ## 翻译库文件 组
 var TF_files=[]
 
-const path_doc_cn=["Doc_cn/V1","Doc_cn/V2"]
-const path_doc_source="Doc_source/V2"
+const path_doc_cn=["Doc_cn/V1"]
+const path_doc_source="Doc_source/V1"
 
 const is_identically=false
 
 ## 以下是项目的配置
 var DOC_path=G.dir_current_parent()+path_doc_source
-var DOC_cn_path=[G.dir_current_parent()+path_doc_cn[0],G.dir_current_parent()+path_doc_cn[1]]
+# var DOC_cn_path=[G.dir_current_parent()+path_doc_cn[0],G.dir_current_parent()+path_doc_cn[1]]
+var DOC_cn_path=[G.dir_current_parent()+path_doc_cn[0]]
 
 ## 待翻译的文件类型
 var tr_type=["md"]
@@ -37,11 +38,14 @@ func find_SF(tf:TF):
 func find_TF(tf:SF)->Array:
     var files=[]
     var na1=tf.file_name.replace(".md","_cn.md")
+    
     for it in Data.TF_files:
-        for _path in path_doc_cn:
+        for _path in path_doc_cn:  
+             
             var na2=tf.path.replace(path_doc_source,_path)
+            
             if it.file_name==na1 and it.path==na2:
-                files.append(it)
+                files.append(it)      
     return files
 
 ## 查找同名翻译文件

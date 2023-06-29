@@ -19,7 +19,10 @@ func load_all_TF():
     var files=[]
     for path in Data.DOC_cn_path:
         G.dir_contents(path,files)
-        for it in files:
+        for it in files:           
+            if !it.is_Tfile() :
+                continue 
+            
             var tr=TF.new()
             tr.path=it.path
             tr.file_name=it.file_name
